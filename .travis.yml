@@ -7,14 +7,18 @@ branches:
   only:
     - master
 
+env:
+  global:
+    - CI_SOURCE_PATH=$(pwd)
+    - CI_PARENT_DIR=.travis
+
 jobs:
   include:
     - name: "Dummy Test"
       dist: bionic
       language: bash
       python: "2.7.15"
-      services: docker
       env:
-      - TEST=build
+        - TEST=build
       script:
-        - $TEST.sh
+        - $CI_PARENT_DIR/$TEST.sh

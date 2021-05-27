@@ -1,4 +1,7 @@
+CI_SOURCE_PATH=${CI_SOURCE_PATH:-$(dirname "$(realpath "$0")")/..}
 TRAVIS_BRANCH=${TRAVIS_BRANCH:-$(git rev-parse --short HEAD)}
+
+cd $CI_SOURCE_PATH
 
 echo "Building $TRAVIS_BRANCH"
 CHANGED_FILES="$(git diff --name-only ${TRAVIS_BRANCH}..HEAD --)"
