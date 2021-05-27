@@ -12,7 +12,7 @@ CHANGED_FILES="$(git diff --name-only HEAD@{0} HEAD@{1})"
 echo ${CHANGED_FILES}
 
 echo "TRAVIS_COMMIT_RANGE: "
-CHANGED_FILES="$(git diff --name-only $TRAVIS_COMMIT_RANGE)"
+CHANGED_FILES="$(git diff --name-only $TRAVIS_COMMIT_RANGE --)"
 echo ${CHANGED_FILES}
 
 echo "HEAD~..HEAD: "
