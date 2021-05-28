@@ -18,7 +18,7 @@ jobs:
       dist: bionic
       language: bash
       python: "2.7.15"
-      env:
-        - TEST=build
+      before_script:
+        - $CI_PARENT_DIR/build_1.sh
       script:
-        - $CI_PARENT_DIR/$TEST.sh
+        - $CI_PARENT_DIR/build_2.sh
